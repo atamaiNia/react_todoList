@@ -1,5 +1,7 @@
 .Container {
-  padding: 20px;
+  max-width: 400px;
+  width: 90%;
+  padding: 10px;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
@@ -17,8 +19,8 @@ h1 {
 
 .TodoList {
   list-style: none;
-  width: 400px;
   padding: 0px;
+  margin: 0px;
 }
 
 .TodoList__item {
