@@ -25,10 +25,9 @@ h1 {
 
 .TodoList__item {
   display: flex;
-  justify-content: space-between;
   padding: 10px;
   align-items: center;
-  background-color: rgba(234, 126, 248, 0.25);
+  background-color: rgb(126 174 248 / 25%);
   box-shadow: 4px 4px rgb(0 0 0 / 15%);
   margin-bottom: 20px;
 }
@@ -37,13 +36,22 @@ h1 {
   margin-bottom: 0px;
 }
 
+.TodoList__checkbox {
+  width: 17px;
+  height: 17px;
+  margin-right: 15px;
+}
+
 .Todolist__text {
   margin-right: 20px;
   font-size: 20px;
 }
 
 .Todolist__btn {
-  background-color: rgba(175, 19, 247, 0.5);
+  position: absolute;
+  right: 25px;
+  background-color: rgb(8 107 228);
+  width: 80px;
   height: 35px;
   padding: 5px;
   color: white;

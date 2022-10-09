@@ -1,0 +1,20 @@
+.TodoEditor {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+}
+
+.TodoEditor__textarea {
+  padding: 5px 16px;
+  resize: none;
+  margin-bottom: 12px;
+  box-shadow: 4px 4px rgb(0 0 0 / 15%);
+}
+
+.TodoEditor__btn {
+  background-color: rgb(8 107 228);
+  height: 35px;
+  padding: 5px;
+  color: white;
+  box-shadow: 4px 4px rgb(0 0 0 / 15%);
+}
