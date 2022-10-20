@@ -3,11 +3,11 @@ import shortid from 'shortid';
 import TodoList from './TodoList';
 import TodoEditor from './TodoEditor';
 import Filter from './Filter';
-import initialTodos from './todos.json';
+// import initialTodos from './todos.json';
 
 class App extends Component {
   state = {
-    todos: initialTodos,
+    todos: [],
     filter: '',
   };
 
@@ -45,6 +45,27 @@ class App extends Component {
   filterChange = event => {
     this.setState({ filter: event.currentTarget.value });
   };
+
+  componentDidMount() {
+    console.log('App componentDidMount');
+
+    const todos = localStorage.getItem('todos');
+    const parsedTodos = JSON.parse(todos);
+
+    if (parsedTodos) {
+      this.setState({ todos: parsedTodos });
+    }
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log('App componentDidUpdate');
+
+    if (this.state.todos !== prevState.todos) {
+      console.log('Обновилося поле todos, записую todos в сховище');
+
+      localStorage.setItem('todos', JSON.stringify(this.state.todos));
+    }
+  }
 
   render() {
     const { todos, filter } = this.state;

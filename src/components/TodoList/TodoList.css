@@ -43,8 +43,14 @@ h1 {
 }
 
 .Todolist__text {
-  margin-right: 20px;
+  width: 140px;
   font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .Todolist__text {
+    width: 250px;
+  }
 }
 
 .Todolist__btn {
