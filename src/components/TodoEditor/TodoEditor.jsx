@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import './TodoEditor.css';
+import { TodoForm, FormTextarea, FormBtn } from './TodoEditor.styled';
 
 class TodoEditor extends Component {
   state = {
@@ -22,16 +22,12 @@ class TodoEditor extends Component {
     const { handleChange, handleSubmit } = this;
 
     return (
-      <form className="TodoEditor" onSubmit={handleSubmit}>
-        <textarea
-          className="TodoEditor__textarea"
-          value={message}
-          onChange={handleChange}
-        ></textarea>
-        <button type="submit" className="TodoEditor__btn">
+      <TodoForm onSubmit={handleSubmit}>
+        <FormTextarea value={message} onChange={handleChange}></FormTextarea>
+        <FormBtn type="submit" className="TodoEditor__btn">
           Add
-        </button>
-      </form>
+        </FormBtn>
+      </TodoForm>
     );
   }
 }

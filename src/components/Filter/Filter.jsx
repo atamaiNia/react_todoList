@@ -1,17 +1,12 @@
 import React from 'react';
-import './Filter.css';
+import { Label, Input } from './Filter.styled';
 
 const Filter = ({ value, onChange }) => {
   return (
-    <label className="Filter">
-      Filter name
-      <input
-        type="text"
-        value={value}
-        onChange={onChange}
-        className="Filter__input"
-      />
-    </label>
+    <Label>
+      Filter by name
+      <Input type="text" value={value} onChange={onChange} />
+    </Label>
   );
 };
 

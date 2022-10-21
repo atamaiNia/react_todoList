@@ -3,7 +3,7 @@ import shortid from 'shortid';
 import TodoList from './TodoList';
 import TodoEditor from './TodoEditor';
 import Filter from './Filter';
-// import initialTodos from './todos.json';
+import { Container, Title, Text } from './App.styled';
 
 class App extends Component {
   state = {
@@ -83,12 +83,12 @@ class App extends Component {
     );
 
     return (
-      <div className="Container">
-        <h1>Список тудушок</h1>
-        <div className="TodoList_describe">
+      <Container>
+        <Title>Список тудушок</Title>
+        <Text className="TodoList_describe">
           <p>Загальна кількість тудушок: {totalTodoCount}</p>
           <p>Кількість виконаних тудушок: {completedTodoCount}</p>
-        </div>
+        </Text>
         <TodoEditor onSubmit={addTodo} />
         <Filter value={filter} onChange={filterChange} />
         <TodoList
@@ -96,7 +96,7 @@ class App extends Component {
           onDeleteTodo={deleteTodo}
           onToggleCompleted={toggleCompleted}
         />
-      </div>
+      </Container>
     );
   }
 }

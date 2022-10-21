@@ -1,24 +1,21 @@
 import React from 'react';
-import './TodoList.css';
+import { List, Item } from './TodoList.styled';
 import PropTypes from 'prop-types';
+import Todo from 'components/Todo';
 
 const TodoList = ({ todos, onDeleteTodo, onToggleCompleted }) => (
-  <ul className="TodoList">
+  <List>
     {todos.map(({ id, text, completed }) => (
-      <li key={id} className="TodoList__item">
-        <input
-          type="checkbox"
-          className="TodoList__checkbox"
-          checked={completed}
-          onChange={() => onToggleCompleted(id)}
+      <Item key={id} className="TodoList__item">
+        <Todo
+          text={text}
+          completed={completed}
+          onToggleCompleted={() => onToggleCompleted(id)}
+          onDeleteTodo={() => onDeleteTodo(id)}
         />
-        <p className="Todolist__text"> {text}</p>
-        <button className="Todolist__btn" onClick={() => onDeleteTodo(id)}>
-          Удалити
-        </button>
-      </li>
+      </Item>
     ))}
-  </ul>
+  </List>
 );
 
 TodoList.propTypes = {
